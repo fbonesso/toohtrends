@@ -1,0 +1,24 @@
+<ion-view view-title="Trends">
+	<div class="item-input-inset join">
+	  <label class="item-input-wrapper">
+	    <i class="icon placeholder-icon"></i>
+	    <input type="text" placeholder="Trend to join (ex: #global)" id="join">
+	  </label>
+	  <button class="button button-join" ng-click="join();">Join</button>
+	</div>
+	<br clear="all" />
+	<ion-content class="padding trends">
+		<div class="loading" ng-if="loading">
+	      <center><ion-spinner icon="circles"></ion-spinner></center>
+	    </div>
+		<div class="card" ng-repeat="trend in trends" ng-click="openChat('{{ trend.name }}');">
+			<div class="item item-text-wrap trend" style="background:url('{{ trend.image }}') center;">
+				<center>
+					<span class="name">{{ trend.name }}</span>
+				</center>
+			</div>
+		</div>
+		<br clear="all" />
+		<br clear="all" />
+	</ion-content>
+</ion-view>

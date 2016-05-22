@@ -1,0 +1,40 @@
+<ion-view view-title="{{ title }}">
+  <ion-content class="padding">
+    <div ng-if="!chat.comments && !loading" class="vertical-center">
+      <center><i class="ion-ios-flag"></i></center>
+      <center>Nothing here yet, be the Neil Armstrong.</center>
+    </div>
+    <div class="loading" ng-if="loading">
+      <center><ion-spinner icon="circles"></ion-spinner></center>
+    </div>
+    <div ng-repeat="comment in chat.comments">
+      <img class="comment-profile-photo" ng-cache ng-src="{{ comment.user_photo }}" onerror="this.src='./img/no-photo.png';" />
+
+      <div class="comment-post-details">
+        <div class="comment-post-date">
+          <i class="ion-clock"></i> {{ comment.timestamp | fromNow }}
+        </div>
+        <div class="comment-profile-name">
+          {{ comment.user_name }}
+        </div>
+        <div class="comment-post-description">
+          {{ comment.comment }}
+        </div>
+      </div>
+      <br clear="all" />
+      <br clear="all" />
+    </div>
+    <br clear="all" />
+    <br clear="all" />
+    <br clear="all" />
+  </ion-content>
+  <ion-footer-bar align-title="left">
+    <div class="item-input-inset comment">
+      <label class="item-input-wrapper">
+        <i class="icon placeholder-icon"></i>
+        <input type="text" placeholder="Message" id="comment">
+      </label>
+      <button class="button button-comment" ng-click="comment();">Send</button>
+    </div>
+  </ion-footer-bar>
+</ion-view>

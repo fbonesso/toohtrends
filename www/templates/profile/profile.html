@@ -1,0 +1,31 @@
+<ion-view view-title="Profile" class="profile">
+	<ion-content>
+		<div class="header">
+			<center>
+				<img src="{{ user_photo }}" class="profile-photo" />
+				<br clear="all" />
+				<br clear="all" />
+				<span class="profile-name">{{ user_name }}</span>
+				<br clear="all" />
+				<button class="button logout" ng-click="logout();">Logout</button>
+				<br clear="all" />
+				<br clear="all" />
+			</center>
+		</div>
+		<div class="history">
+			<center><h2>Suggestions</h2></center>
+			<button class="button tag" ng-repeat="tag in suggestions" ng-show="tag != ''" ng-click="openChat('#{{ tag }}');">#{{ tag }}</button>
+		</div>
+		<br clear="all" />
+		<div class="history" ng-if="history.length > 1">
+			<center><h2>History</h2></center>
+			<button class="button tag" ng-repeat="tag in history" ng-show="tag != ''" ng-click="openChat('#{{ tag }}');">#{{ tag }}</button>
+			<br clear="all" />
+			<br clear="all" />
+			<center><button class="button clear" ng-click="clear();">Clear History</button></center>
+			<br clear="all" />
+			<br clear="all" />
+		</div>
+		<br clear="all" />
+	</ion-content>
+</ion-view>
