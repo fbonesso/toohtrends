@@ -2,7 +2,7 @@
 
 ## Toohtrends
 
-Toohtrends is the open source mobile project for  **VanHackathon** challenge.
+Toohtrends is the open source mobile project for a **hackathon** challenge.
 
 ## Technology
 
